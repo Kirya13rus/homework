@@ -67,10 +67,10 @@ function replaceC(array) {
 function enterOthersValues(array) {
 
     for (let i = 0; i < arr.length; i++) {
-        if (typeof arr[i] != "string") {
+        if (typeof arr[i] != "string", typeof arr[i] != "number") {
             arr[i] = emptyArr.push(arr[i])
         }
-    }
+     }
     return emptyArr
 }
 console.log(arr);
