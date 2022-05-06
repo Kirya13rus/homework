@@ -51,16 +51,28 @@
 // Например, на функцию подали массив ["Максим", "Car", "Сергей", "Андрей", "culture", "Ярослав", "Кирилл", null, undefined], после выполнения функция возвращает следующий массив ["Маким", "Car", "ергей", "Андрей", "culture", "Яролав", "Кирилл"] 
 
 let arr = ["Максим", "Car", "Сергей", "Андрей", "culture", "Ярослав", "Кирилл", null, undefined]
+let newArr = []
+let emptyArr = []
 
 function replaceC(array) {
 
-    for (let i = 0; i < arr.length; i++) 
-    {
-        if (typeof array[i] === "string") {
-            arr[i] = arr[i].replace(/с/g, '').replace(/С/g, '')
+    for (let i = 0; i < arr.length; i++) {
+        if (typeof arr[i] === "string") {
+            arr[i] = newArr.push(arr[i].replace(/с/g, '').replace(/С/g, ''))
         }
     }
-    return arr
+    return newArr
 }
 
-console.log(replaceC(arr));
+function enterOthersValues(array) {
+
+    for (let i = 0; i < arr.length; i++) {
+        if (typeof arr[i] != "string") {
+            arr[i] = emptyArr.push(arr[i])
+        }
+    }
+    return emptyArr
+}
+console.log(arr);
+console.log(replaceC(newArr));
+console.log(enterOthersValues(emptyArr));
