@@ -50,29 +50,68 @@
 // Написать функцию принимающая на вход массив строк. Функция должна удалить все символы русской буквы «с» из строк в массиве и вернуть готовый массив с отредактированными строками.
 // Например, на функцию подали массив ["Максим", "Car", "Сергей", "Андрей", "culture", "Ярослав", "Кирилл", null, undefined], после выполнения функция возвращает следующий массив ["Маким", "Car", "ергей", "Андрей", "culture", "Яролав", "Кирилл"] 
 
-let arr = ["Максим", "Car", "Сергей", "Андрей", "culture", "Ярослав", "Кирилл", null, undefined]
-let newArr = []
-let emptyArr = []
+// let arr = ["Максим", "Car", "Сергей", "Андрей", "culture", "Ярослав", "Кирилл", null, undefined]
+// let emptyArr = []
 
-function replaceC(array) {
+// function replaceC(array) {
+//     let newArr = []
+//     if (array == null) {
+//         return newArr
+//     }
+//     for (let i = 0; i < array.length; i++) {
+//         if (typeof array[i] === "string") {
+//             newArr.push(array[i].replaceAll(/[С|с]/g, ""))
+//         }
+//     }
+//     return newArr
+// }
 
-    for (let i = 0; i < arr.length; i++) {
-        if (typeof arr[i] === "string") {
-            arr[i] = newArr.push(arr[i].replace(/с/g, '').replace(/С/g, ''))
-        }
-    }
-    return newArr
+// // console.log(arr);
+// console.log(replaceC(undefined));
+
+// Задача 4 (Необязательная)
+// Сделайте функцию принимающую на вход массив и число элементов указывающее сколько элементов может быть в одном массиве (['a', 'b', 'c', 'd'], 2); 
+// И ожидается возврат с функции: [['a', 'b'], ['c', 'd']]
+
+// Задача 4
+// Сделать вывод значений в html из массива c объектами где ключ title означает тэг <h1></h1> и вывод значения ключа внутрь этого тэга, ключ text означает paragraph <p></p> значение ключа text выводить в <p>, ключ colorText означает цвет текста внутри тэга <p></p>
+
+const array = [{
+    title: 'Title 1',
+    text: 'Paragraph 1',
+    colorText: 'red',
+},
+{
+    title: 'Title 2',
+    text: 'Paragraph 2',
+    colorText: 'blue',
+},
+{
+    title: 'Title 3',
+    text: 'Paragraph 3',
+    colorText: 'green',
+},
+{
+    title: 'Title 4',
+    text: 'lorem',
+    colorText: 'magenta'
+}]
+
+function doneIGuess(array) {
+    
+for (let i = 0; i < array.length; i++) {
+
+    let createDiv = document.createElement('div');
+    document.body.append(createDiv)
+    let createH1 = document.createElement('h1');
+    let createP = document.createElement('p');
+    createDiv.append(createH1)
+    createDiv.append(createP)
+    createH1.innerText = array[i].title
+    createP.innerText = array[i].text
+    createP.style.color = array[i].colorText
 }
 
-function enterOthersValues(array) {
-
-    for (let i = 0; i < arr.length; i++) {
-        if (typeof arr[i] != "string", typeof arr[i] != "number") {
-            arr[i] = emptyArr.push(arr[i])
-        }
-     }
-    return emptyArr
 }
-console.log(arr);
-console.log(replaceC(newArr));
-console.log(enterOthersValues(emptyArr));
+
+doneIGuess(array)
